@@ -16,12 +16,12 @@ for i, l in enumerate(lines):
     if 'version=' in l2:
         location = l.find('version')
         before = l[:location]
-        current_version = l.replace(' ', '').replace("'", '').replace(',', '').split('=')[-1].replace(' ','')\
-            .replace('\n','')
+        current_version = l.replace(' ', '').replace("'", '').replace(',', '').split('=')[-1].replace(' ', '') \
+            .replace('\n', '')
     if 'name=' in l2:
         location = l.find('name')
         before = l[:location]
-        name = l.replace(' ', '').replace("'", '').replace(',', '').split('=')[-1].replace(' ', '')\
+        name = l.replace(' ', '').replace("'", '').replace(',', '').split('=')[-1].replace(' ', '') \
             .replace('\n', '')
 if name is None:
     print('Could not find the package name in setup.py')
@@ -34,12 +34,16 @@ if not os.path.exists(package_path) or not os.path.isdir(package_path):
     print('Could not find package {} at {}'.format(name, project_root))
     exit(-3)
 doc_path = os.path.join(project_root, 'docs')
+
+
 def _update_template(conf_txt):
     conf_txt = conf_txt.replace('<<package_name>>', name)
     conf_txt = conf_txt.replace('<<version>>', current_version)
     conf_txt = conf_txt.replace('<<year>>', str(datetime.datetime.now().year))
     conf_txt = conf_txt.replace('<<now>>', str(datetime.datetime.now()))
     return conf_txt
+
+
 os.makedirs(doc_path, exist_ok=True)
 conf_txt = None
 doc_helpers_dir = os.path.join(this_path, 'doc_helpers')
@@ -60,4 +64,3 @@ os.chdir(doc_path)
 os.system('sphinx-apidoc -a -f -o . ../{}'.format(name))
 os.system('make html')
 os.chdir(current_dir)
-

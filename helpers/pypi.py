@@ -7,7 +7,7 @@ import os
 import subprocess
 import sys
 
-subprocess.call(['pip','install', 'twine', 'sphinx', 'sphinxcontrib-napoleon'
+subprocess.call(['pip', 'install', 'twine', 'sphinx', 'sphinxcontrib-napoleon'
                  , 'pipreqs'])
 
 pump_version = False
@@ -35,6 +35,5 @@ if dist_file is None:
     print('Could not find dist file name in the output of setup.py sdist')
     sys.exit(-2)
 print('Uploading {} to pypi'.format(dist_file))
-subprocess.check_output(['pipenv', 'install', '--dev', 'twine'], stderr=subprocess.STDOUT)
 subprocess.check_output(['twine', 'upload', 'dist/{}'.format(dist_file)])
 os.chdir(current_dir)
