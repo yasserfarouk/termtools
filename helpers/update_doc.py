@@ -57,7 +57,7 @@ for file_name in list(os.listdir(doc_helpers_dir)):
             file.write(conf_txt)
 current_dir = os.getcwd()
 os.chdir(doc_path)
-os.system('sphinx-apidoc -f -o . ../{}'.format(name))
+os.system('sphinx-apidoc -a -f -o . ../{}'.format(name))
 os.system('make html')
 os.chdir(current_dir)
 

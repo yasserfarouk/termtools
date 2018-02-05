@@ -7,14 +7,28 @@ one argument with the location of setup.py file
 """
 import sys
 import os
-from pipenv.project import Project
-from pipenv.utils import convert_deps_to_pip
-loc = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 if len(sys.argv) > 1:
     loc = sys.argv[1]
-pfile = Project(chdir=False).parsed_pipfile
-requirements = convert_deps_to_pip(pfile['packages'], r=False)
-test_requirements = convert_deps_to_pip(pfile['dev-packages'], r=False)
+loc = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+project_root = os.path.abspath(os.path.join(loc, '..'))
+
+requirements = []
+test_requirements = []
+
+def from_pipenv():
+    from pipenv.project import Project
+    from pipenv.utils import convert_deps_to_pip
+    pfile = Project(chdir=False).parsed_pipfile
+    requirements = convert_deps_to_pip(pfile['packages'], r=False)
+    test_requirements = convert_deps_to_pip(pfile['dev-packages'], r=False)
+    return requirements, test_requirements
+
+def from_requirements_file():
+    raise NotImplementedError()
+
+if os.path.exists(os.path.join(project_root, 'Pipfile')):
+    requirements, test_requirements = from_pipenv()
+
 with open(os.path.join(loc, 'setup.py'), 'r') as f:
     lines = f.readlines()
 

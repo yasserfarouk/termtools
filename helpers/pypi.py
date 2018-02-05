@@ -7,12 +7,21 @@ import os
 import subprocess
 import sys
 
+subprocess.call(['pip','install', 'twine', 'sphinx', 'sphinxcontrib-napoleon'
+                 , 'pipreqs'])
+
+pump_version = False
+for arg in sys.argv[1:]:
+    if arg in ('-f', '--force', '--pump-version'):
+        pump_version = True
+
 this_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(this_dir, '..'))
 current_dir = os.getcwd()
 os.chdir(this_dir)
 subprocess.check_output(['python', '{}/convert_readme_to_rs.py'.format(this_dir)], stderr=subprocess.STDOUT)
-subprocess.check_output(['python', '{}/pump_version_number.py'.format(this_dir)], stderr=subprocess.STDOUT)
+if pump_version:
+    subprocess.check_output(['python', '{}/pump_version_number.py'.format(this_dir)], stderr=subprocess.STDOUT)
 subprocess.check_output(['python', '{}/update_doc.py'.format(this_dir)], stderr=subprocess.STDOUT)
 subprocess.check_output(['python', '{}/update_requirements_in_setup_from_pipenv.py'.format(this_dir)]
                         , stderr=subprocess.STDOUT)

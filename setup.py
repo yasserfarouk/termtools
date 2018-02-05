@@ -14,11 +14,11 @@ with open(path.join(here, 'README'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='yutils',
-    version='0.1.8',
-    description='A collection of utility functions/decorators/classes I use',
+    name='termtools',
+    version='0.0.2',
+    description='A set of tools for nice terminal applications',
     long_description=long_description,
-    url='https://github.com/yasser/yutils',
+    url='https://github.com/yasser/termtools',
     author='Yasser Mohammad',
     author_email='yasserfarouk@gmail.com',
     license='MIT',
@@ -38,8 +38,8 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='utilities',
-    packages=find_packages(),
-    install_requires=['numpy', 'scipy', 'pandas', 'arff'],
+    packages=find_packages('./termtools'),
+    install_requires=[],
     python_requires='>3.6',
     install_package_data=False,
 )
