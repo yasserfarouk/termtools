@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-"""
-Pumps the version number in setup.py by 1 if possible.
-"""
+"""Pumps the version number in setup.py by 1 if possible."""
 import datetime
 import os
 
@@ -11,18 +9,31 @@ with open(os.path.join(project_root, 'setup.py'), 'r') as file_name:
     lines = file_name.readlines()
 name = None
 current_version = None
+short_description = ''
 for i, l in enumerate(lines):
     l2 = l.replace(' ', '')
     if 'version=' in l2:
         location = l.find('version')
         before = l[:location]
-        current_version = l.replace(' ', '').replace("'", '').replace(',', '').split('=')[-1].replace(' ', '') \
+        current_version = l.replace(' ', '').replace("'", '').replace(',', '')\
+            .split('=')[-1].replace(' ', '') \
+            .replace('\n', '')
+    if 'description=' in l2:
+        location = l.find('description')
+        before = l[:location]
+        short_description = l.replace(' ', '').replace("'", '')\
+            .replace(',', '').split('=')[-1].replace(' ', '') \
             .replace('\n', '')
     if 'name=' in l2:
         location = l.find('name')
         before = l[:location]
-        name = l.replace(' ', '').replace("'", '').replace(',', '').split('=')[-1].replace(' ', '') \
+        name = l.replace(' ', '').replace("'", '').replace(',', '')\
+            .split('=')[-1].replace(' ', '') \
             .replace('\n', '')
+
+if len(short_description) == 0:
+    short_description = 'Package ' + name
+
 if name is None:
     print('Could not find the package name in setup.py')
     exit(-1)
@@ -37,6 +48,7 @@ doc_path = os.path.join(project_root, 'docs')
 
 
 def _update_template(conf_txt):
+    conf_txt = conf_txt.replace('<<short_description>>', short_description)
     conf_txt = conf_txt.replace('<<package_name>>', name)
     conf_txt = conf_txt.replace('<<version>>', current_version)
     conf_txt = conf_txt.replace('<<year>>', str(datetime.datetime.now().year))

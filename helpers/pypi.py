@@ -8,7 +8,8 @@ import subprocess
 import sys
 
 subprocess.call(['pip', 'install', 'twine', 'sphinx', 'sphinxcontrib-napoleon'
-                 , 'pipreqs'])
+                 , 'pipreqs', 'sphinx-autodoc-annotation', 'numpydoc'
+                 , 'sphinx-autodoc-typehints', 'sphinxcontrib-fulltoc'])
 
 pump_version = False
 for arg in sys.argv[1:]:
@@ -19,14 +20,21 @@ this_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(this_dir, '..'))
 current_dir = os.getcwd()
 os.chdir(this_dir)
-subprocess.check_output(['python', '{}/convert_readme_to_rs.py'.format(this_dir)], stderr=subprocess.STDOUT)
+subprocess.check_output(['python', '{}/convert_readme_to_rs.py'.format(
+    this_dir)], stderr=subprocess.STDOUT)
 if pump_version:
-    subprocess.check_output(['python', '{}/pump_version_number.py'.format(this_dir)], stderr=subprocess.STDOUT)
-subprocess.check_output(['python', '{}/update_doc.py'.format(this_dir)], stderr=subprocess.STDOUT)
-subprocess.check_output(['python', '{}/update_requirements_in_setup_from_pipenv.py'.format(this_dir)]
+    subprocess.check_output(['python', '{}/pump_version_number.py'.format(
+        this_dir)], stderr=subprocess.STDOUT)
+subprocess.check_output(['python', '{}/update_doc.py'.format(this_dir)]
+                        , stderr=subprocess.STDOUT)
+subprocess.check_output(['python',
+                         '{}/update_requirements_in_setup_from_pipenv.py'\
+                         .format(this_dir)]
                         , stderr=subprocess.STDOUT)
 os.chdir(project_root)
-setup_txt = subprocess.check_output(['python', 'setup.py', 'sdist'], stderr=subprocess.STDOUT).decode().split('\n')
+setup_txt = subprocess.check_output(['python', 'setup.py', 'sdist']
+                                    , stderr=subprocess.STDOUT).decode()\
+                                    .split('\n')
 dist_file = None
 for s in setup_txt:
     if s.startswith('removing'):
