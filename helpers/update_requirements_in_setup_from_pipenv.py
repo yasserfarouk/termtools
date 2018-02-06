@@ -8,9 +8,9 @@ one argument with the location of setup.py file
 import sys
 import os
 if len(sys.argv) > 1:
-    loc = sys.argv[1]
-loc = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-project_root = os.path.abspath(os.path.join(loc, '..'))
+    this_dir = sys.argv[1]
+this_file = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(this_file, '..'))
 
 requirements = []
 test_requirements = []
@@ -33,13 +33,16 @@ def from_requirements_file():
     test_requirements = []
     if os.path.exists(os.path.join(project_root, 'requirements.txt')):
         with open(os.path.join(project_root, 'requirements.txt'), 'r') as reqfile:
-            requirements.append(reqfile.readlines())
+            requirements += reqfile.readlines()
     if os.path.exists(os.path.join(project_root, 'requirements-dev.txt')):
         with open(os.path.join(project_root, 'requirements-dev.txt'), 'r') as reqfile:
-            test_requirements.append(reqfile.readlines())
+            test_requirements += reqfile.readlines()
+    if os.path.exists(os.path.join(this_file, 'requirements-dev.txt')):
+        with open(os.path.join(this_file, 'requirements-dev.txt'), 'r') as reqfile:
+            test_requirements += reqfile.readlines()
     if os.path.exists(os.path.join(project_root, 'requirements_dev.txt')):
         with open(os.path.join(project_root, 'requirements_dev.txt'), 'r') as reqfile:
-            test_requirements.append(reqfile.readlines())
+            test_requirements += reqfile.readlines()
     return requirements, test_requirements
 
 
@@ -47,8 +50,14 @@ def from_requirements_file():
 # runtime and development)
 req, test_req = from_pipenv()
 req2, test_req2 = from_requirements_file()
-requirements = list(set(req).union(set(req2)))
-test_requirements = list(set(test_req).union(set(test_req2)))
+requirements = req
+for item in req2:
+    if item not in requirements:
+        requirements.append(item)
+test_requirements = test_req
+for item in test_req2:
+    if item not in test_requirements:
+        test_requirements.append(item)
 
 # update requirements file
 with open(os.path.join(project_root, 'requirements.txt'), 'w') as reqfile:
@@ -56,7 +65,7 @@ with open(os.path.join(project_root, 'requirements.txt'), 'w') as reqfile:
 with open(os.path.join(project_root, 'requirements-dev.txt'), 'w') as reqfile:
     reqfile.writelines(test_requirements)
 
-with open(os.path.join(loc, 'setup.py'), 'r') as f:
+with open(os.path.join(project_root, 'setup.py'), 'r') as f:
     lines = f.readlines()
 
 for i, l in enumerate(lines):
@@ -64,5 +73,5 @@ for i, l in enumerate(lines):
         location = l.find('install_requires')
         before = l[:location]
         lines[i] = before + 'install_requires={},\n'.format(requirements)
-with open(os.path.join(loc, 'setup.py'), 'w') as f:
+with open(os.path.join(project_root, 'setup.py'), 'w') as f:
     f.writelines(lines)

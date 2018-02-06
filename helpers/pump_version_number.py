@@ -1,13 +1,11 @@
 #!/usr/bin/env python
-"""
-Pumps the version number in setup.py by 1 if possible.
-"""
+"""Pumps the version number in setup.py by 1 if possible."""
 import sys
 import os
-loc = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+project_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 if len(sys.argv) > 1:
-    loc = sys.argv[1]
-with open(os.path.join(loc, 'setup.py'), 'r') as f:
+    project_root = sys.argv[1]
+with open(os.path.join(project_root, 'setup.py'), 'r') as f:
     lines = f.readlines()
 for i, l in enumerate(lines):
     l2 = l.replace(' ','')
@@ -19,5 +17,5 @@ for i, l in enumerate(lines):
         version[-1] = str(int(version[-1])+1)
         version = '.'.join(version)
         lines[i] = before + 'version=\'{}\',\n'.format(version)
-with open(os.path.join(loc, 'setup.py'), 'w') as f:
+with open(os.path.join(project_root, 'setup.py'), 'w') as f:
     f.writelines(lines)
