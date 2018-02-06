@@ -1,5 +1,5 @@
 A set of terminal tools that helps building apps that look nice on the terminal
-===============================================================================
+-------------------------------------------------------------------------------
 
 This is a simple library for controlling *text* appearance and placement
 on terminals. It provides also an advanced progress bar library.

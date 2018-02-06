@@ -4,14 +4,9 @@ termtools package
 Submodules
 ----------
 
-termtools\.terminal module
---------------------------
+.. toctree::
 
-.. automodule:: termtools.terminal
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
+   termtools.terminal
 
 Module contents
 ---------------

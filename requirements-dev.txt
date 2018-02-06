@@ -1,9 +1,0 @@
-# development requirements for getting documentation compiled and helper scripts runnable (e.g. for uploading to pypi)
-twine
-sphinx
-sphinxcontrib-napoleon
-pipreqs
-sphinx-autodoc-annotation
-numpydoc
-sphinx-autodoc-typehints
-sphinxcontrib-fulltoc

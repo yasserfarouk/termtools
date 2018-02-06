@@ -17,4 +17,5 @@ if len(requirements_dev) > 0:
     subprocess.call(['pip', 'install'] + requirements_dev)
 
 project_root = os.path.abspath(os.path.join(this_dir, '..'))
+subprocess.call(['pip', 'install', '--upgrade', 'setuptools'])
 subprocess.call(['pip', 'install', '-e', project_root])

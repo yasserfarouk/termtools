@@ -643,8 +643,7 @@ class ProgressBarController(object):
 
     def show_all(self, barname=None, i=None, n=None, clean_screen=True, prefix='<name><activity>', suffix='<remaining>',
                  bar_length=-1, skip_rows=0):
-        """
-        Shows a specific bar or all bars, possibly cleaning the screen.
+        """Shows a specific bar or all bars, possibly cleaning the screen
 
         Args:
             barname (str or None): name of the bar
@@ -653,11 +652,9 @@ class ProgressBarController(object):
             clean_screen (bool): Whether or not to clean the screen before drawing. Default is true
             prefix (str): prefix to write before the bar (see the class doc string for possible tag values)
             suffix (str): postfix (see prefix)
-            bar_length (int): Bar length, if less than zero then the current length set during creation of the bar or
-                        latest setting of its progess will be used.
+            bar_length (int): Bar length, if less than zero then the current length set during creation of the bar or latest setting of its progess will be used.
             skip_rows (int): the number of lines to skip between bars
-            from_line_beginning (bool): If true, a '\r' and flushing will be outputed to set the bar to the beginning
-                            of the line
+            from_line_beginning (bool): If true, a \\r and flushing will be outputed to set the bar to the beginning of the line
 
         Returns:
             self

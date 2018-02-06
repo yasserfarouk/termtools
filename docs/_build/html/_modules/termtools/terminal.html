@@ -5,13 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>termtools.terminal &#8212; termtools 0.0.5 documentation</title>
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>termtools.terminal &#8212; termtools 0.0.8 documentation</title>
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.0.5',
+        VERSION:     '0.0.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -23,7 +32,10 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+  
+   
+
   </head>
   <body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,15 +47,64 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">termtools 0.0.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">termtools 0.0.8 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
-    </div>  
+    </div>
+    <div class="container-wrapper">
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+        <a href="
+    ../../index.html" class="text-logo">termtools</a>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../indices.html">Indices and tables</a></li>
+</ul>
+
+    
+  </div>
+</div>
+        
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../../index.html">Docs</a></li>
+              
+                <li><a href="../index.html">Module code</a></li>
+              
+              <li>termtools.terminal</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
             
   <h1>Source code for termtools.terminal</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/env python</span>
@@ -58,7 +119,7 @@
 <span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">t</span>
 
 
-<div class="viewcode-block" id="TerminalController"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController">[docs]</a><span class="k">class</span> <span class="nc">TerminalController</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController">[docs]</a><span class="k">class</span> <span class="nc">TerminalController</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A class for controlling where to print on a screen and the attributes of text to be printed.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -67,7 +128,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">pass</span>
 
-<div class="viewcode-block" id="TerminalController.clear"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.clear"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            clears the screen</span>
 
@@ -75,7 +136,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">home</span><span class="p">(</span><span class="n">erase_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TerminalController.home"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.home">[docs]</a>    <span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">erase_screen</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.home"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.home">[docs]</a>    <span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">erase_screen</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            gets the cursor to the top of the screen</span>
 
@@ -87,7 +148,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0;0H&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.goto"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.goto">[docs]</a>    <span class="k">def</span> <span class="nf">goto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.goto"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.goto">[docs]</a>    <span class="k">def</span> <span class="nf">goto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            goes to the specified x-y coordingates on the screen</span>
 
@@ -107,7 +168,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[&quot;</span> <span class="o">+</span> <span class="n">VERT</span> <span class="o">+</span> <span class="s2">&quot;;&quot;</span> <span class="o">+</span> <span class="n">HORIZ</span> <span class="o">+</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.printat"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.printat">[docs]</a>    <span class="k">def</span> <span class="nf">printat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.printat"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.printat">[docs]</a>    <span class="k">def</span> <span class="nf">printat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            goes to the specified x-y coordingates on the screen and prints the text.</span>
 
@@ -127,7 +188,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[&quot;</span> <span class="o">+</span> <span class="n">VERT</span> <span class="o">+</span> <span class="s2">&quot;;&quot;</span> <span class="o">+</span> <span class="n">HORIZ</span> <span class="o">+</span> <span class="s2">&quot;f&quot;</span> <span class="o">+</span> <span class="n">txt</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.up"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.up">[docs]</a>    <span class="k">def</span> <span class="nf">up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.up"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.up">[docs]</a>    <span class="k">def</span> <span class="nf">up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            goes up the specified number of rows</span>
 
@@ -140,7 +201,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.down"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.down">[docs]</a>    <span class="k">def</span> <span class="nf">down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.down"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.down">[docs]</a>    <span class="k">def</span> <span class="nf">down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            goes down the specified number of rows</span>
 
@@ -153,7 +214,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.left"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.left">[docs]</a>    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.left"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.left">[docs]</a>    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            goes left the specified number of rows</span>
 
@@ -166,7 +227,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.right"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.right">[docs]</a>    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.right"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.right">[docs]</a>    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            goes right the specified number of rows</span>
 
@@ -179,7 +240,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.bookmark"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.bookmark">[docs]</a>    <span class="k">def</span> <span class="nf">bookmark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.bookmark"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.bookmark">[docs]</a>    <span class="k">def</span> <span class="nf">bookmark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            saves current cursor position</span>
 
@@ -188,7 +249,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[s&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.goto_bookmark"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.goto_bookmark">[docs]</a>    <span class="k">def</span> <span class="nf">goto_bookmark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.goto_bookmark"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.goto_bookmark">[docs]</a>    <span class="k">def</span> <span class="nf">goto_bookmark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            goes to current bookmarked position (must use bookmark() before it)</span>
 
@@ -197,7 +258,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[u&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.eraseToEOL"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.eraseToEOL">[docs]</a>    <span class="k">def</span> <span class="nf">eraseToEOL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.eraseToEOL"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.eraseToEOL">[docs]</a>    <span class="k">def</span> <span class="nf">eraseToEOL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            erases all text from currnt location to the end of the line</span>
 
@@ -206,7 +267,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[K&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.eraseToBOL"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.eraseToBOL">[docs]</a>    <span class="k">def</span> <span class="nf">eraseToBOL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.eraseToBOL"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.eraseToBOL">[docs]</a>    <span class="k">def</span> <span class="nf">eraseToBOL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            erases all text from currnt location to the beginning of the line</span>
 
@@ -215,7 +276,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1K&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.eraseLine"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.eraseLine">[docs]</a>    <span class="k">def</span> <span class="nf">eraseLine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.eraseLine"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.eraseLine">[docs]</a>    <span class="k">def</span> <span class="nf">eraseLine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            erases all text from currnt line</span>
 
@@ -224,7 +285,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[2K&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.eraseUp"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.eraseUp">[docs]</a>    <span class="k">def</span> <span class="nf">eraseUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.eraseUp"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.eraseUp">[docs]</a>    <span class="k">def</span> <span class="nf">eraseUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            erases all text from currnt line to the beginning of the screen</span>
 
@@ -233,7 +294,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1J&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.eraseDown"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.eraseDown">[docs]</a>    <span class="k">def</span> <span class="nf">eraseDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.eraseDown"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.eraseDown">[docs]</a>    <span class="k">def</span> <span class="nf">eraseDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            erases all text from currnt line to the end of the screen</span>
 
@@ -244,7 +305,7 @@
 
     <span class="c1"># TODO Add Tab control support (http://www.termsys.demon.co.uk/vtansi.htm)</span>
 
-<div class="viewcode-block" id="TerminalController.set_attributes"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.set_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">set_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">,</span> <span class="n">attrib</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.set_attributes"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.set_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">set_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">,</span> <span class="n">attrib</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">):</span>
 
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            sets the text attributes to be used by new prints. a value of &quot;keep&quot; keeps the current set</span>
@@ -295,7 +356,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="n">to_print</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TerminalController.color"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.color">[docs]</a>    <span class="k">def</span> <span class="nf">color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.color"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.color">[docs]</a>    <span class="k">def</span> <span class="nf">color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            sets the text foreground color</span>
 
@@ -304,7 +365,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_attributes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TerminalController.set_foreground"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.set_foreground">[docs]</a>    <span class="k">def</span> <span class="nf">set_foreground</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.set_foreground"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.set_foreground">[docs]</a>    <span class="k">def</span> <span class="nf">set_foreground</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;keep&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        sets the text foreground color</span>
 
@@ -313,7 +374,7 @@
 <span class="sd">                &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TerminalController.background"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.background">[docs]</a>    <span class="k">def</span> <span class="nf">background</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.background"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.background">[docs]</a>    <span class="k">def</span> <span class="nf">background</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            sets the text background color</span>
 
@@ -322,7 +383,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_attributes</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="n">background</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TerminalController.set_background"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.set_background">[docs]</a>    <span class="k">def</span> <span class="nf">set_background</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.set_background"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.set_background">[docs]</a>    <span class="k">def</span> <span class="nf">set_background</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            sets the text background color</span>
 
@@ -331,7 +392,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">background</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="n">background</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TerminalController.attrib"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.attrib">[docs]</a>    <span class="k">def</span> <span class="nf">attrib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrib</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.attrib"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.attrib">[docs]</a>    <span class="k">def</span> <span class="nf">attrib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrib</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            sets the text attributes</span>
 
@@ -340,7 +401,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_attributes</span><span class="p">(</span><span class="n">attrib</span><span class="o">=</span><span class="n">attrib</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TerminalController.set_attribute"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.set_attribute">[docs]</a>    <span class="k">def</span> <span class="nf">set_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrib</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.set_attribute"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.set_attribute">[docs]</a>    <span class="k">def</span> <span class="nf">set_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrib</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            sets the text attributes</span>
 
@@ -349,7 +410,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">attrib</span><span class="p">(</span><span class="n">attrib</span><span class="o">=</span><span class="n">attrib</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TerminalController.reset_attributes"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.reset_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">reset_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.reset_attributes"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.reset_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">reset_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            resets all text attributes to their defaults</span>
 
@@ -357,12 +418,12 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TerminalController.print"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.TerminalController.print">[docs]</a>    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="TerminalController.print"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.TerminalController.print">[docs]</a>    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div></div>
 
 
-<div class="viewcode-block" id="humanize_time"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.humanize_time">[docs]</a><span class="k">def</span> <span class="nf">humanize_time</span><span class="p">(</span><span class="n">secs</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">always_show_all_units</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="humanize_time"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.humanize_time">[docs]</a><span class="k">def</span> <span class="nf">humanize_time</span><span class="p">(</span><span class="n">secs</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">always_show_all_units</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Prints time that is given as seconds in human readable form. Useful only for times &gt;=1sec.</span>
 
@@ -388,7 +449,7 @@
     <span class="k">return</span> <span class="s2">&quot;:&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="print_progress"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.print_progress">[docs]</a><span class="k">def</span> <span class="nf">print_progress</span><span class="p">(</span><span class="n">iteration</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">barLength</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">limit_range</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="print_progress"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.print_progress">[docs]</a><span class="k">def</span> <span class="nf">print_progress</span><span class="p">(</span><span class="n">iteration</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">barLength</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">limit_range</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Call in a loop to create terminal progress bar</span>
 
@@ -425,7 +486,7 @@
     <span class="k">return</span> <span class="n">boundary_error</span></div>
 
 
-<div class="viewcode-block" id="ProgressBarController"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController">[docs]</a><span class="k">class</span> <span class="nc">ProgressBarController</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController">[docs]</a><span class="k">class</span> <span class="nc">ProgressBarController</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    A set of progress bars.</span>
 
@@ -480,7 +541,7 @@
             <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
         <span class="k">return</span> <span class="n">b</span>
 
-<div class="viewcode-block" id="ProgressBarController.add_bar"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.add_bar">[docs]</a>    <span class="k">def</span> <span class="nf">add_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">start_timing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController.add_bar"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.add_bar">[docs]</a>    <span class="k">def</span> <span class="nf">add_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">start_timing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds a bar</span>
 
 <span class="sd">        Can control the name, starting progress (i) and total progress</span>
@@ -513,7 +574,7 @@
                                   <span class="k">else</span> <span class="mi">0</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ProgressBarController.remove_bar"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.remove_bar">[docs]</a>    <span class="k">def</span> <span class="nf">remove_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController.remove_bar"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.remove_bar">[docs]</a>    <span class="k">def</span> <span class="nf">remove_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Removes a bar given its name</span>
 
 <span class="sd">        Args:</span>
@@ -531,7 +592,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ProgressBarController.start_timing"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.start_timing">[docs]</a>    <span class="k">def</span> <span class="nf">start_timing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forNames</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController.start_timing"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.start_timing">[docs]</a>    <span class="k">def</span> <span class="nf">start_timing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">forNames</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Starts timing for ETA calculation for the given bar names</span>
 
 <span class="sd">        Args:</span>
@@ -551,7 +612,7 @@
                     <span class="bp">self</span><span class="o">.</span><span class="n">begTime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">begTime</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ProgressBarController.set_progress"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.set_progress">[docs]</a>    <span class="k">def</span> <span class="nf">set_progress</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController.set_progress"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.set_progress">[docs]</a>    <span class="k">def</span> <span class="nf">set_progress</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sets progress for a specific bar, optionally setting its limit as well</span>
 
 <span class="sd">        Args:</span>
@@ -576,7 +637,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">last_n</span> <span class="o">=</span> <span class="n">n</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ProgressBarController.get_remaining_time"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.get_remaining_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_remaining_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController.get_remaining_time"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.get_remaining_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_remaining_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Gets the time remaining till the end of execution (only an estimate)</span>
 
 <span class="sd">        Args:</span>
@@ -620,7 +681,7 @@
             <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&lt;activity&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">activityChars</span><span class="p">[</span><span class="n">activity</span><span class="p">])</span>
         <span class="k">return</span> <span class="nb">input</span>
 
-<div class="viewcode-block" id="ProgressBarController.activate"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.activate">[docs]</a>    <span class="k">def</span> <span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController.activate"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.activate">[docs]</a>    <span class="k">def</span> <span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Indicate that the given bar is active. If name is None, all bars are indicated to be active by progressing</span>
 
 <span class="sd">        Args:</span>
@@ -637,7 +698,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activityChars</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ProgressBarController.show"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.show">[docs]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&lt;remaining&gt;&#39;</span><span class="p">,</span> <span class="n">bar_length</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">from_line_beginning</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController.show"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.show">[docs]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&lt;remaining&gt;&#39;</span><span class="p">,</span> <span class="n">bar_length</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">from_line_beginning</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Shows a specific bar just in the current place on the screen. We should have a new line before it</span>
 
 <span class="sd">        Args:</span>
@@ -689,10 +750,9 @@
             <span class="k">pass</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ProgressBarController.show_all"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.show_all">[docs]</a>    <span class="k">def</span> <span class="nf">show_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">barname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">clean_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&lt;name&gt;&lt;activity&gt;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&lt;remaining&gt;&#39;</span><span class="p">,</span>
+<div class="viewcode-block" id="ProgressBarController.show_all"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.show_all">[docs]</a>    <span class="k">def</span> <span class="nf">show_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">barname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">clean_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&lt;name&gt;&lt;activity&gt;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&lt;remaining&gt;&#39;</span><span class="p">,</span>
                  <span class="n">bar_length</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">skip_rows</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Shows a specific bar or all bars, possibly cleaning the screen.</span>
+        <span class="sd">&quot;&quot;&quot;Shows a specific bar or all bars, possibly cleaning the screen</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            barname (str or None): name of the bar</span>
@@ -701,11 +761,9 @@
 <span class="sd">            clean_screen (bool): Whether or not to clean the screen before drawing. Default is true</span>
 <span class="sd">            prefix (str): prefix to write before the bar (see the class doc string for possible tag values)</span>
 <span class="sd">            suffix (str): postfix (see prefix)</span>
-<span class="sd">            bar_length (int): Bar length, if less than zero then the current length set during creation of the bar or</span>
-<span class="sd">                        latest setting of its progess will be used.</span>
+<span class="sd">            bar_length (int): Bar length, if less than zero then the current length set during creation of the bar or latest setting of its progess will be used.</span>
 <span class="sd">            skip_rows (int): the number of lines to skip between bars</span>
-<span class="sd">            from_line_beginning (bool): If true, a &#39;\r&#39; and flushing will be outputed to set the bar to the beginning</span>
-<span class="sd">                            of the line</span>
+<span class="sd">            from_line_beginning (bool): If true, a \\r and flushing will be outputed to set the bar to the beginning of the line</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            self</span>
@@ -732,7 +790,7 @@
     <span class="k">def</span> <span class="nf">_indicateError</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
-<div class="viewcode-block" id="ProgressBarController.terminal"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.terminal">[docs]</a>    <span class="k">def</span> <span class="nf">terminal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TerminalController</span><span class="p">:</span>
+<div class="viewcode-block" id="ProgressBarController.terminal"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.terminal">[docs]</a>    <span class="k">def</span> <span class="nf">terminal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TerminalController</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Gets the built-in `TerminalController` object</span>
 
 <span class="sd">        Returns:</span>
@@ -740,7 +798,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_terminal</span></div>
 
-<div class="viewcode-block" id="ProgressBarController.update"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="ow">or</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="viewcode-block" id="ProgressBarController.update"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="ow">or</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
                <span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&lt;name&gt;&lt;activity&gt;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&lt;remaining&gt;&#39;</span><span class="p">,</span> <span class="n">bar_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Updates the progress value of a given bar and shows all the bars in their relative positions</span>
@@ -787,7 +845,7 @@
             <span class="k">pass</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ProgressBarController.show_in_position"><a class="viewcode-back" href="../../termtools.html#termtools.terminal.ProgressBarController.show_in_position">[docs]</a>    <span class="k">def</span> <span class="nf">show_in_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&lt;name&gt;&lt;activity&gt;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&lt;remaining&gt;&#39;</span><span class="p">,</span> <span class="n">bar_length</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="ProgressBarController.show_in_position"><a class="viewcode-back" href="../../termtools.terminal.html#termtools.terminal.ProgressBarController.show_in_position">[docs]</a>    <span class="k">def</span> <span class="nf">show_in_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&lt;name&gt;&lt;activity&gt;&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;&lt;remaining&gt;&#39;</span><span class="p">,</span> <span class="n">bar_length</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Shows the named bar in its appropriate position without touching anything else in the screen</span>
 
@@ -832,23 +890,9 @@
 </pre></div>
 
           </div>
+            
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
+        <div class="clearfix"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -859,13 +903,18 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">termtools 0.0.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">termtools 0.0.8 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2018, Yasser Mohammad.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
-    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Yasser Mohammad. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
   </body>
 </html>

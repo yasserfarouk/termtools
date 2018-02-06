@@ -4,19 +4,17 @@
    contain the root `toctree` directive.
 
 Welcome to <<package_name>>'s documentation!
-==================================
+============================================
 
-.. include:: ../README
+.. include:: ../README.rst
 
+Table of Contents
+=================
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: -1   
+
+   references
+   indices
 
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

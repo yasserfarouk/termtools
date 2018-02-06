@@ -1,0 +1,102 @@
+\begin{sphinxtheindex}
+\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+
+  \bigletter A
+  \item activate() (termtools.terminal.ProgressBarController method), \hyperpage{5}
+  \item activityChars (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item add\_bar() (termtools.terminal.ProgressBarController method), \hyperpage{5}
+  \item attrib() (termtools.terminal.TerminalController method), \hyperpage{8}
+
+  \indexspace
+  \bigletter B
+  \item background() (termtools.terminal.TerminalController method), \hyperpage{8}
+  \item barNames (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item begTime (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item bookmark() (termtools.terminal.TerminalController method), \hyperpage{8}
+
+  \indexspace
+  \bigletter C
+  \item clear() (termtools.terminal.TerminalController method), \hyperpage{8}
+  \item color() (termtools.terminal.TerminalController method), \hyperpage{9}
+  \item completed\_background (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item completed\_color (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item current (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+
+  \indexspace
+  \bigletter D
+  \item down() (termtools.terminal.TerminalController method), \hyperpage{9}
+
+  \indexspace
+  \bigletter E
+  \item eraseDown() (termtools.terminal.TerminalController method), \hyperpage{9}
+  \item eraseLine() (termtools.terminal.TerminalController method), \hyperpage{9}
+  \item eraseToBOL() (termtools.terminal.TerminalController method), \hyperpage{9}
+  \item eraseToEOL() (termtools.terminal.TerminalController method), \hyperpage{9}
+  \item eraseUp() (termtools.terminal.TerminalController method), \hyperpage{9}
+
+  \indexspace
+  \bigletter G
+  \item get\_remaining\_time() (termtools.terminal.ProgressBarController method), \hyperpage{5}
+  \item goto() (termtools.terminal.TerminalController method), \hyperpage{9}
+  \item goto\_bookmark() (termtools.terminal.TerminalController method), \hyperpage{9}
+
+  \indexspace
+  \bigletter H
+  \item home() (termtools.terminal.TerminalController method), \hyperpage{10}
+  \item humanize\_time() (in module termtools.terminal), \hyperpage{3}
+
+  \indexspace
+  \bigletter L
+  \item last\_i (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item last\_n (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item last\_name\_updated (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item left() (termtools.terminal.TerminalController method), \hyperpage{10}
+
+  \indexspace
+  \bigletter O
+  \item over\_complete\_background (termtools.terminal.ProgressBarController attribute), 
+		\hyperpage{5}
+  \item over\_complete\_color (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+
+  \indexspace
+  \bigletter P
+  \item print() (termtools.terminal.TerminalController method), \hyperpage{10}
+  \item print\_progress() (in module termtools.terminal), \hyperpage{3}
+  \item printat() (termtools.terminal.TerminalController method), \hyperpage{10}
+  \item ProgressBarController (class in termtools.terminal), \hyperpage{4}
+
+  \indexspace
+  \bigletter R
+  \item remove\_bar() (termtools.terminal.ProgressBarController method), \hyperpage{6}
+  \item reset\_attributes() (termtools.terminal.TerminalController method), \hyperpage{10}
+  \item right() (termtools.terminal.TerminalController method), \hyperpage{10}
+  \item running\_background (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item running\_color (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+
+  \indexspace
+  \bigletter S
+  \item set\_attribute() (termtools.terminal.TerminalController method), \hyperpage{10}
+  \item set\_attributes() (termtools.terminal.TerminalController method), \hyperpage{10}
+  \item set\_background() (termtools.terminal.TerminalController method), \hyperpage{10}
+  \item set\_foreground() (termtools.terminal.TerminalController method), \hyperpage{11}
+  \item set\_progress() (termtools.terminal.ProgressBarController method), \hyperpage{6}
+  \item show() (termtools.terminal.ProgressBarController method), \hyperpage{6}
+  \item show\_all() (termtools.terminal.ProgressBarController method), \hyperpage{6}
+  \item show\_in\_position() (termtools.terminal.ProgressBarController method), \hyperpage{7}
+  \item start\_timing() (termtools.terminal.ProgressBarController method), \hyperpage{7}
+
+  \indexspace
+  \bigletter T
+  \item terminal() (termtools.terminal.ProgressBarController method), \hyperpage{7}
+  \item TerminalController (class in termtools.terminal), \hyperpage{7}
+  \item termtools.terminal (module), \hyperpage{3}
+
+  \indexspace
+  \bigletter U
+  \item under\_complete\_background (termtools.terminal.ProgressBarController attribute), 
+		\hyperpage{5}
+  \item under\_complete\_color (termtools.terminal.ProgressBarController attribute), \hyperpage{5}
+  \item up() (termtools.terminal.TerminalController method), \hyperpage{11}
+  \item update() (termtools.terminal.ProgressBarController method), \hyperpage{7}
+
+\end{sphinxtheindex}

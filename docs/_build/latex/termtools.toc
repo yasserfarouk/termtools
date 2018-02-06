@@ -1,0 +1,19 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}A set of terminal tools that helps building apps that look nice on the terminal}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Table of Contents}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Reference}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Functions}{3}{subsection.2.1.1}
+\contentsline {subsubsection}{humanize\_time}{3}{subsubsection*.3}
+\contentsline {subsubsection}{print\_progress}{3}{subsubsection*.5}
+\contentsline {subsection}{\numberline {2.1.2}Classes}{4}{subsection.2.1.2}
+\contentsline {subsubsection}{ProgressBarController}{4}{subsubsection*.7}
+\contentsline {paragraph}{Attributes Summary}{4}{paragraph*.9}
+\contentsline {paragraph}{Methods Summary}{4}{paragraph*.10}
+\contentsline {paragraph}{Attributes Documentation}{5}{paragraph*.11}
+\contentsline {paragraph}{Methods Documentation}{5}{paragraph*.27}
+\contentsline {subsubsection}{TerminalController}{7}{subsubsection*.39}
+\contentsline {paragraph}{Methods Summary}{8}{paragraph*.41}
+\contentsline {paragraph}{Methods Documentation}{8}{paragraph*.42}
+\contentsline {subsection}{\numberline {2.1.3}Class Inheritance Diagram}{11}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Indices and tables}{11}{section.2.2}
+\contentsline {chapter}{Index}{13}{section*.67}
