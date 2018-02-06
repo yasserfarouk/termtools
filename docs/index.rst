@@ -1,5 +1,5 @@
 .. termtools documentation master file, created by
-   sphinx-quickstart on 2018-02-06 15:26:10.962391
+   sphinx-quickstart on 2018-02-06 17:09:00.695390
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 

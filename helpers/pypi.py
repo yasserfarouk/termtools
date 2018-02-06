@@ -1,23 +1,24 @@
 #!/usr/bin/env python
-"""
-Prepares and uploads the project to pypi assuming that it uses Pipenv.
+"""Prepares and uploads the project to pypi assuming that it uses Pipenv."""
 
-"""
 import os
 import subprocess
 import sys
 
-subprocess.call(['pip', 'install', 'twine', 'sphinx', 'sphinxcontrib-napoleon'
-                 , 'pipreqs', 'sphinx-autodoc-annotation', 'numpydoc'
-                 , 'sphinx-autodoc-typehints', 'sphinxcontrib-fulltoc'])
+this_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(this_dir, '..'))
+
+subprocess.check_output(['python', '{}/init_helpers.py'.format(this_dir)]
+                        , stderr=subprocess.STDOUT)
+
 
 pump_version = False
 for arg in sys.argv[1:]:
     if arg in ('-f', '--force', '--pump-version'):
         pump_version = True
 
-this_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.abspath(os.path.join(this_dir, '..'))
+
+
 current_dir = os.getcwd()
 os.chdir(this_dir)
 subprocess.check_output(['python', '{}/convert_readme_to_rs.py'.format(
