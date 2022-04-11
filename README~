@@ -1,6 +1,8 @@
-## A set of terminal tools that helps building apps that look nice on the terminal
+# A set of terminal tools that helps building apps that look nice on the
+terminal
 
-This is a simple library for controlling *text* appearance and placement on terminals. 
+This is a simple library for controlling *text* appearance and placement on
+terminals. 
 It provides also an advanced progress bar library.
 
 The main advantages of the progress bar library included here are the
